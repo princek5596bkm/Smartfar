@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - MY SMART KISAN</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .register-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .register-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .register-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .register-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .register-container button:hover {
+            background-color: #45a049;
+        }
+
+        .register-container a {
+            display: block;
+            margin-top: 10px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .register-container a:hover {
+            text-decoration: underline;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: yellow;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            z-index: 1000; /* Ensure the button is on top */
+        }
+
+        .back-button:hover {
+            background-color: #f0e300; /* Slightly darker yellow on hover */
+        }
+    </style>
+</head>
+<body>
+
+<button class="back-button" onclick="goBack()">Back</button>
+
+<div class="register-container">
+    <h2>Register</h2>
+    <form id="register-form">
+        <input type="text" id="username" placeholder="Username or Email" required>
+        <input type="password" id="password" placeholder="Create Password" required>
+        <button type="submit">Register</button>
+    </form>
+    <a href="login.html">Already have an account? Login here</a>
+</div>
+
+<script>
+    function goBack() {
+        window.location.href = 'index.html'; // Redirect to the main page
+    }
+
+    document.getElementById('register-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            const response = await fetch('http://localhost:5000/api/auth/signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password }),
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                alert('Registration successful');
+                window.location.href = 'login.html';
+            } else {
+                alert(data.message);
+            }
+        } catch (error) {
+            alert('Error during registration');
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard - MY SMART KISAN</title>
+    <link rel="stylesheet" href="styles4.css">
+    <script src="scripts4.js" defer></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Seller Dashboard</h1>
+
+        <!-- Profile Section -->
+        <div class="section" onclick="toggleSection('profile-section')">
+            <h2>Profile</h2>
+            <div id="profile-section" class="section-content">
+                <form id="profile-form">
+                    <label for="seller-name">Name:</label>
+                    <input type="text" id="seller-name" placeholder="Enter your name" required>
+
+                    <label for="seller-address">Address:</label>
+                    <input type="text" id="seller-address" placeholder="Enter your address" required>
+
+                    <button type="submit" class="btn">Save Profile</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sell Product Section -->
+        <div class="section" onclick="toggleSection('sell-product-section')">
+            <h2>Sell Product</h2>
+            <div id="sell-product-section" class="section-content">
+                <form id="sell-product-form">
+                    <label for="food-name">Enter Name of Food to Sell:</label>
+                    <input type="text" id="food-name" placeholder="Enter food name" required>
+
+                    <label for="food-species">Enter Species of Food:</label>
+                    <input type="text" id="food-species" placeholder="Enter species" required>
+
+                    <label for="food-photo">Upload Photo of Product:</label>
+                    <input type="file" id="food-photo" accept="image/*" required>
+
+                    <button type="submit" class="btn">Post Product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

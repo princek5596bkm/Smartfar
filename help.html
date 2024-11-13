@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - MY SMART KISAN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .chatbot-container {
+            width: 400px;
+            margin: 0 auto;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+        }
+        .chat-body {
+            padding: 15px;
+            height: 400px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .chat-message {
+            padding: 10px;
+            border-radius: 8px;
+            max-width: 70%;
+        }
+        .user-message {
+            align-self: flex-end;
+            background-color: #e0f7fa;
+        }
+        .bot-message {
+            align-self: flex-start;
+            background-color: #f1f1f1;
+        }
+        .chat-footer {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+        .chat-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .chat-send {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .chat-send:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chatbot-container">
+    <div class="chat-header">Help Center Bot</div>
+    <div class="chat-body" id="chat-body">
+        <div class="bot-message chat-message">Hello! How can I assist you today?</div>
+    </div>
+    <div class="chat-footer">
+        <input type="text" id="chat-input" class="chat-input" placeholder="Type your message...">
+        <button class="chat-send" onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+    // Function to handle sending and responding to messages
+    function sendMessage() {
+        const inputField = document.getElementById('chat-input');
+        const message = inputField.value.trim();
+
+        if (message === '') return;
+
+        // Add user message to chat
+        addMessage('user', message);
+        inputField.value = '';
+
+        // Bot response based on user input
+        setTimeout(() => {
+            const botResponse = getBotResponse(message);
+            addMessage('bot', botResponse);
+        }, 500);
+    }
+
+    // Function to display messages in the chat
+    function addMessage(sender, message) {
+        const chatBody = document.getElementById('chat-body');
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('chat-message', sender === 'user' ? 'user-message' : 'bot-message');
+        messageDiv.innerText = message;
+        chatBody.appendChild(messageDiv);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    // Function to generate bot responses
+    function getBotResponse(message) {
+        const responses = {
+            "hi": "Hello! How can I help you?",
+            "how to buy": "To buy a product, browse categories, select your desired item, and click 'Buy Now'.",
+            "how to sell": "To sell, please create an account, log in, and upload your product details.",
+            "how to change language": "You can change the language from the top right corner of the website.",
+            "contact support": "You can contact support via email at support@mysmartkisan.com or call 123-456-7890.",
+            "order status": "To check your order status, go to your account and click on 'Order History'.",
+            "forgot password": "If you forgot your password, click on 'Forgot Password' on the login page to reset it.",
+            "thanks": "You're welcome! Feel free to ask if you have more questions.",
+            "bye": "Goodbye! Have a great day!"
+        };
+
+        
+        return responses[message.toLowerCase()] || "I'm sorry, I didn't understand that. Could you please rephrase?";
+    }
+</script>
+
+</body>
+</html>

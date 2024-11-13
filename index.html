@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY SMART KISAN - Buy & Sell Agricultural Products</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>MY SMART KISAN</h1>
+            <img src="images/image02.jpg" alt="description-of-image" width="100" height="100">
+
+            <div class="header-options">
+                <div class="language-switch">
+                    <label for="language">Language:</label>
+                    <select id="language" onchange="changeLanguage()">
+                        <option value="en">English</option>
+                        <option value="hi">हिंदी</option>
+                    </select>
+                </div>
+                <a href="login.html">Login</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="seller.html" class="seller-option">Seller</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <!-- Logo Section -->
+
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="C:\Users\amc\Downloads\newproject\02\images\image02.jpg" alt="">
+            </a>
+        </div>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Filter</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="help.html">Help Center</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Search Section -->
+    <section id="search-section">
+        <div class="container">
+            <input type="text" id="search-box" placeholder="Search for products, categories, location..." />
+            <button onclick="searchProducts()">Search</button>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories-section">
+        <div class="container">
+            
+            <div class="categories">
+                <div class="category">
+                    <img src="images/image.png" alt="description-of-image" width="100" height="100">
+                    <h3>Rice</h3>
+                </div>
+                <div class="category">
+                    <img src="path-to-image" alt="description-of-image" width="desired-width" height="desired-height">
+
+                    <h3>Pulses</h3>
+                </div>
+                <div class="category">
+                    <img src="path-to-image" alt="description-of-image" width="desired-width" height="desired-height">
+                    <h3>Wheat</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Listings -->
+    <section id="product-listing">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="images/mango.jpg" alt="Mango">
+                    <h3>Mangoes - Fresh and Organic</h3>
+                    <p>Price: ₹50 / kg</p>
+                    <p>Location: Mumbai, Maharashtra</p>
+                    <button>Buy Now</button>
+                </div>
+                <div class="product">
+                    <img src="images/tomato.png" alt="Tomato">
+                    <h3>Tomatoes - Red and Juicy</h3>
+                    <p>Price: ₹40 / kg</p>
+                    <p>Location: Delhi</p>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MY SMART KISAN. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

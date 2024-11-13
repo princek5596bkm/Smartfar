@@ -1,0 +1,60 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #4CAF50;
+}
+
+/* Seller Container Styles */
+.seller-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+/* Button Styles */
+.btn {
+    display: block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+/* Seller Options Heading Styles */
+.seller-options h2 {
+    font-size: 20px;
+    color: #333;
+    margin-top: 30px;
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Categories - MY SMART KISAN</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .category-container {
+            width: 400px;
+            margin: 0 auto;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .category-header {
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+
+        }
+        .subcategory-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: none;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+        .subcategory-list li {
+            padding: 10px 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+        }
+        .subcategory-list li:hover {
+            
+            background-color: #e9e9e9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="category-container">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back Button Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .back-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: yellow;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            z-index: 1000; /* Ensure the button is on top */
+        }
+        .back-button:hover {
+            background-color: #f0e300; /* Slightly darker yellow on hover */
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="goBack()">Back</button>
+
+    <script>
+        function goBack() {
+            window.location.href = 'index.html'; // Redirect to the main page
+        }
+    </script>
+</body>
+</html>
+    <div class="category-header" onclick="toggleCategory('cereals')">Cereals</div>
+    <ul id="cereals" class="subcategory-list">
+        <li>Rice</li>
+        <li>Wheat</li>
+        <li>Barley</li>
+        <li>Sorghum</li>
+        <li>Pearl Millet</li>
+    </ul>
+
+    <div class="category-header" onclick="toggleCategory('pulses')">Pulses</div>
+    <ul id="pulses" class="subcategory-list">
+        <li>Chickpea</li>
+        <li>Pigeon Pea</li>
+        <li>Black Gram</li>
+        <li>Green Gram</li>
+        <li>Lentil</li>
+    </ul>
+
+    <div class="category-header" onclick="toggleCategory('oilseeds')">Oil Seeds</div>
+    <ul id="oilseeds" class="subcategory-list">
+        <li>Groundnut</li>
+        <li>Mustard</li>
+        <li>Soybean</li>
+        <li>Sunflower</li>
+        <li>Seasame</li>
+    </ul>
+
+    <div class="category-header" onclick="toggleCategory('cashcrops')">Cash Crops</div>
+    <ul id="cashcrops" class="subcategory-list">
+        <li>Sugarcane</li>
+        <li>Cotton</li>
+        <li>Jute</li>
+        <li>Tea</li>
+        <li>Coffee</li>
+    </ul>
+
+    <div class="category-header" onclick="toggleCategory('fruits')">Fruits</div>
+    <ul id="fruits" class="subcategory-list">
+        <li>Mango</li>
+        <li>Banana</li>
+        <li>Apple</li>
+        <li>Grapes</li>
+        <li>Orange</li>
+    </ul>
+
+    <div class="category-header" onclick="toggleCategory('vegetables')">Vegetables</div>
+    <ul id="vegetables" class="subcategory-list">
+        <li>Potato</li>
+        <li>Tomato</li>
+        <li>Onion</li>
+        <li>Brinjal</li>
+        <li>Cauliflower</li>
+    </ul>
+
+    <div class="category-header" onclick="toggleCategory('spices')">Spices</div>
+    <ul id="spices" class="subcategory-list">
+        <li>Black Pepper</li>
+        <li>Ginger</li>
+    </ul>
+</div>
+
+<script>
+    
+    function toggleCategory(categoryId) {
+        const category = document.getElementById(categoryId);
+        category.style.display = category.style.display === 'block' ? 'none' : 'block';
+        
+    }
+</script>
+
+</body>
+</html>
